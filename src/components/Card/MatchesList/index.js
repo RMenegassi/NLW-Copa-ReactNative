@@ -5,9 +5,9 @@ import {View, Text, Image, ListMatches, PartidaView} from './styles';
 import {images} from '../../../images';
 import {matches} from '../../../assets/matches';
 
-const MatchesList = () => {
+const MatchesList = ({day}) => {
   const dataFiltrada = matches.filter(item => {
-    return item.dia === '02/12';
+    return item.dia === day;
   });
 
   return (
