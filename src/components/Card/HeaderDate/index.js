@@ -1,14 +1,44 @@
-import {View, Text} from 'react-native';
 import React from 'react';
 
-import {DateView, Date, Day} from './styles';
+import moment from 'moment';
+import '../../../../node_modules/moment/locale/pt-br.js';
 
-const HeaderDate = () => {
+import {
+  BlockView,
+  DateView,
+  ButtonLeft,
+  ButtonRight,
+  Date,
+  Day,
+} from './styles';
+
+import Icon from 'react-native-vector-icons/Ionicons';
+
+const HeaderDate = ({day, addDay, subDay}) => {
+  const dayWeek = moment(`${day}`, 'DD/MM')
+    .locale('pt-br')
+    .format('dddd')
+    .replace('-feira', '');
+
   return (
-    <DateView>
-      <Date>20/11</Date>
-      <Day>Domingo</Day>
-    </DateView>
+    <BlockView>
+      {day !== '20/11' && (
+        <ButtonLeft onPress={subDay}>
+          <Icon name="caret-back" size={30} color={'#e1e1e6'} />
+        </ButtonLeft>
+      )}
+
+      <DateView>
+        <Date>{day}</Date>
+        <Day>{dayWeek}</Day>
+      </DateView>
+
+      {day !== '02/12' && (
+        <ButtonRight onPress={addDay}>
+          <Icon name="caret-forward" size={30} color={'#e1e1e6'} />
+        </ButtonRight>
+      )}
+    </BlockView>
   );
 };
 
