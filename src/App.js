@@ -1,19 +1,9 @@
-import {Header} from './styles';
+import React from 'react';
 
-import HeaderSVG from './components/Header';
-import Card from './components/Card';
-
-import LinearGradient from 'react-native-linear-gradient';
+import Routes from './Routes';
 
 const App = () => {
-  return (
-    <LinearGradient colors={['#073702', '#062802', '#000']} style={{flex: 1}}>
-      <Header>
-        <HeaderSVG />
-      </Header>
-      <Card />
-    </LinearGradient>
-  );
+  return <Routes />;
 };
 
 export default App;
