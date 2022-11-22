@@ -17,11 +17,22 @@ export const PartidaView = styled.View`
 
 export const Text = styled.Text`
   color: #e1e1e6;
-  font-size: 36px;
+  font-size: 20px;
   font-weight: 900;
 `;
 
 export const Image = styled.Image`
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
+`;
+
+export const Gols = styled.TextInput`
+  background-color: #242c26;
+  width: 30px;
+  height: 45px;
+  border-radius: 8px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
 `;
